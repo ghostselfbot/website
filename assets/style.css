@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background-color: #0b0c0d!important;
+}
+
+.header {
+    padding: 10rem 0;
+}
+
+.header-text {
+    font-weight: bold;
+    background: rgb(67,61,251);
+    background: linear-gradient(59deg, rgba(67,61,251,1) 0%, rgba(137,44,218,1) 91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: 'Climate Crisis', sans-serif;
+
+    font-size: 3rem;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, button {
+    font-family: 'Host Grotesk', sans-serif;
+}
+
+.download-btn {
+    letter-spacing: 0.1rem;
+    background-color: #433dfb!important;
+}
+
+.download-btn:hover {
+    background-color: #3832e4!important;
+}
+
+.about-btn {
+    letter-spacing: 0.1rem;
+    background-color: #06db77!important;
+}
+
+.about-btn:hover {
+    background-color: #05c86f!important;
+}
+
+.feature-subtitle { 
+    margin: 0 auto; 
+    padding-bottom: 50px;
+}
+
+@media screen and (min-width: 992px) {
+    .feature-subtitle {
+        width: 30%;
+    }
+
+    .header {
+        max-width: 960px!important;
+    }
+
+    .header-text {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .feature-subtitle {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #header-content {
+        text-align: center;
+    }
+
+    #header-subtitle {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    #about-picture {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature-subtitle {
+        width: 70%;
+    }
+
+    #console-img-container {
+        display: none;
+    }
+
+    #header-content {
+        padding-top: 2rem;
+    }
+
+    #header-subtitle {
+        width: 80%;
+    }
+
+    .header {
+        padding: 5rem 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .feature-subtitle {
+        width: 80%;
+    }
+
+    #header-subtitle {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .feature-subtitle {
+        width: 90%;
+    }
+
+    #header-subtitle {
+        width: 100%;
+    }
+    
+}

@@ -47,6 +47,17 @@ p, h1, h2, h3, h4, h5, h6, a, button {
     padding-bottom: 50px;
 }
 
+#header-subtitle {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#console-img-container > img {
+    transform: perspective(75em) rotateX(10deg);
+    transition: transform 0.25s ease-out;
+    transform-origin: top;
+}
+
 @media screen and (min-width: 992px) {
     .feature-subtitle {
         width: 30%;
@@ -87,9 +98,9 @@ p, h1, h2, h3, h4, h5, h6, a, button {
         width: 70%;
     }
 
-    #console-img-container {
+    /* #console-img-container {
         display: none;
-    }
+    } */
 
     #header-content {
         padding-top: 2rem;
@@ -101,6 +112,10 @@ p, h1, h2, h3, h4, h5, h6, a, button {
 
     .header {
         padding: 5rem 0;
+    }
+
+    #console-img-container > img {
+        transform: none;
     }
 }
 

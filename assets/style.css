@@ -144,8 +144,8 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
 }
 
 .card {
-    background-color: #0c0c0c!important;
-    border: none;
+    background-color: #131313!important;
+    border: 1px solid #292929!important;
     border-radius: 1rem;
 }
 

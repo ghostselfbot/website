@@ -1,82 +1,134 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
     <head>
-        <title>Ghost</title>
+        <title>Ghost - Your Discord, Your Rules</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="og:title" content="Ghost">
-        <meta name="og:description" content="The official rewrite of the incredibly successful Ghost selfbot.">
-        <meta name="og:image" content="assets/banner.png">
+        <meta name="og:title" content="Ghost - Your Discord, Your Rules">
+        <meta name="og:description" content="Ghost is a powerful and user-friendly selfbot for Discord, designed to enhance your experience with a sleek interface and a wide range of features.">
+        <meta name="og:image" content="assets/ghost.png">
 
         <link rel="stylesheet" href="assets/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/bbd7036ee1.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e03bde962b.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container header px-5">
-            <div class="row">
-                <div class="col-lg-12 pb-5 text-center" id="header-content">
-                    <h1 class="header-text">GHOST</h1>
-                    <h2 class="pb-3" id="header-subtitle">The <span class="text-decoration-underline fw-bold">official</span> open source rewrite of Ghost Selfbot</h2>
-                    <a href="https://github.com/bennyscripts/ghost/releases/latest" type="button" class="btn px-5 py-3 fw-bold download-btn mb-2">DOWNLOAD</a>
-                </div>
-                <div class="col-lg-12 text-center mt-3" id="console-img-container">
-                    <img src="assets/gui.png" alt="Photo of Ghost's GUI." class="img-fluid shadow" width="800">
+        <div class="navbar sticky-top">
+            <div class="custom-container container">
+                <div class="row w-100">
+                    <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                        <a href="#" class="navbar-brand fw-bold ms-4">Ghost</a>
+                        <div style="margin-left: auto!important; display: flex; align-items: center; justify-content: center;">
+                            <a href="https://github.com/ghostselfbot/ghost" class="nav-link d-inline-block"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://discord.gg/ghostsb" class="nav-link d-inline-block ms-3"><i class="fa-brands fa-discord"></i></a>
+                            <a href="https://github.com/ghostselfbot/ghost/releases/latest" class="nav-link d-inline-block btn download-btn px-2 fw-bold ms-4">DOWNLOAD</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- <div class="container-fluid" id="features">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12" style="background-color: #ffffff09;">
-                    <div class="container text-center p-5">
-                        <h2 class="fw-bold">CUSTOM GUI</h2>
-                        <p class="feature-subtitle">Change settings and modify your selfbot through a GUI!</p>
-                        <img src="assets/gui/theming.png" class="img-fluid shadow-sm" style="border-left: #808080c2 1px solid; border-radius: 10px;">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12" style="background-color: #ffffff0f;">
-                    <div class="container text-center p-5">
-                        <h2 class="fw-bold">IMAGE EMBED</h2>
-                        <p class="feature-subtitle">Customise your selfbot by using an image embed!</p>
-                        <img src="assets/embeds.png" class="img-fluid rounded shadow-sm">
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="container-fluid" id="about" style="background-color: #ffffff09;">
-            <div class="container p-5">
+        <div class="header w-100">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 col-sm-12">
-                        <h1 class="fw-bold">ABOUT</h1>
-                        <div class="text-body-secondary">
-                            <p>Ghost started out as Bennyware, my first introduction to creating selfbots and Discord tools. This began to build popularity within the community but at the time it was invite only. I then decided to replace Bennyware with my new selfbot, Ghost. I started it out as invite only and completely free. I had a few people in my friend group start the community and I would drop invite keys every week. Ghost then became quite popular and a lot more people wanted to get on board. After some thought, I then made Ghost open to the public with keys being purchaseable.</p>
-                            <p>Ghost went on to become part of some of the most successful selfbots and was well known around the community. I had built up quite a reputation and with frequent updates it just kept growing.</p>
-                            <div id="about-more" style="display: none;">
-                                <p>Unfortunately, this is where it all went down hill… Someone either inside or outside the community, decided to spam Nighty’s API saying “download ghost” or something similar. At the time, I was part of Nighty’s community and had previously bought a key in 2021. Ghost’s security was incredibly flawed due to my lack of experience. HWIDs were checked by grabbing a list of HWIDs and UIDs. The bot, client side, then checked whether the HWID was in this list. Yes I know, client side… This allowed Nighty to spoof the HTTP requests and make Ghost free to use. One of Nighty’s developers, then posted in the announcements channel about this, leaked my real name and also Ghost.</p>
-                                <p>I panicked and dropped the source to Ghost in Ghost’s server and left. This then stirred up a lot of controversy. I decided to quit the community and focus on my life outside of Discord and the computer. I’m really glad I did this as I am now a lot happier! </p>
-                                <p>Over the few years I was gone, I was still messing about with Discord and creating new tools and selfbots. One of which was this rewrite of Ghost. Rather than one single file and crappy security, the rewrite is written with the latest version of discord.py-self and uses cogs and custom utils to keep the code clean and snappy. Recently, I found my passion for the project again and have added newer features like a GUI and last year I created an image embed utility, making Ghost one of the most feature rich open source selfbots out there!</p>
-                                <p>Hopefully, for the next year or two, I’ll keep the spark alive and gradually update Ghost. This will be slow as I’m currently studying at University.</p>
-                                <p>Here’s to another year of Ghost!</p>
-                                <p class="fst-italic">- Benny</p>
-                            </div>
-                            <a href="#about" onclick="aboutReadMore()" id="about-read-more">Read more</a>
+                    <div class="col-lg-12 text-center mb-4">
+                        <h1 class="header-text">Your Discord</h1>
+                        <h1 class="header-text">Your Rules</h1>
+                        <div class="mt-5">
+                            <a href="#features" class="btn download-btn px-5 py-2 fw-bold" style="font-size: 1.5rem; letter-spacing: 0.05rem;">GET STARTED</a>
+                            <!-- <a href="https://github.com/ghostselfbot" class="btn btn-dark px-3 fw-bold">GITHUB</a> -->
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12" id="about-picture">
-                        <img src="assets/ghost.png" alt="Photo of Benny." class="img-fluid shadow" style="border-radius: 10px;">
+                    <div class="col-lg-12 text-center mt-5">
+                        <div id="console-img-container">
+                            <img src="assets/new-gui.png" class="img-fluid shadow-lg" style="border-radius: 10px;">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+        <div class="container custom-container features" id="features">
+            <div class="mb-4">
+                <h2>Features</h2>
+                <p>Ghost is a powerful selfbot that offers a wide range of features to enhance your Discord experience.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-paintbrush fa-xs pe-1"></i> Customisation</h5>
+                            <p class="card-text">Ghost offers highly customisable image embeds. Your command will reply with a fully customised image embed. Custom title, colour, photo, footer, etc...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-code-branch fa-xs pe-1"></i> Open Source</h5>
+                            <p class="card-text">Ghost is completely open source and free to use! Feel free to contribute or fork the project on GitHub.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-list fa-xs pe-1"></i> 150+ Commands</h5>
+                            <p class="card-text">There are over 150 commands available in Ghost, covering everything from moderation to fun and utility commands.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-tools fa-xs pe-1"></i> Advanced Tools</h5>
+                            <p class="card-text">Ghost includes advanced tools to better control your Discord account and manage your server. Backups, logs, global message search, etc...</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="container-fluid spypet">
+            <div class="custom-container container text-center py-5 my-5">
+                <h1 class="header-text">COMING SOON</h1>
+                <h3 class="mb-5 pb-3">The most powerful tool we've ever built!</h3>
+                <div id="spypet-img-container">
+                    <img src="assets/spypet.png" class="img-fluid shadow-lg" style="border-radius: 10px;">
+                </div>
+                <p class="fst-italic mt-5" style="color: #555555!important;">06/2026</p>
+            </div>
+        </div>
+
+        <div class="container custom-container" style="margin-top: 12rem; margin-bottom: 12rem;" id="setup">
+            <div class="mb-4">
+                <h2>Getting Started</h2>
+                <p>Ghost is best run straight from the source code. Run the below commands in your terminal to setup Ghost</p>
+            </div>
+            <div class="terminal">
+                <p>git clone https://github.com/ghostselfbot/ghost</p>
+                <p>cd ghost</p>
+                <p>python3 -m venv .venv      <span class="terminal-comment"># create venv (requires Python 3.10+)</span></p>
+                <p>source .venv/bin/activate  <span class="terminal-comment"># or on Windows: .\.venv\Scripts\activate</span></p>
+                <p>pip install -r requirements.txt</p>
+                <p>python3 ghost.py</p>
+            </div>
+            <div class="mt-4">
+                <a href="https://github.com/ghostselfbot/ghost/releases/latest" class="btn download-btn">Download</a>
+                <a href="https://github.com/ghostselfbot/ghost" class="btn btn-dark">Github</a>
+                <a href="https://github.com/ghostselfbot/ghost/wiki" class="btn btn-dark">Wiki</a>
+            </div>
+        </div>
 
         <div class="footer container-fluid">
-            <div class="container py-5 text-center">
-                <h5>&copy; Ghost | <a href="https://github.com/bennyscripts/ghost">Github</a></h5>
+            <div class="container py-3 text-center">
+                <p class="pt-3">&copy; bennyscripts 2026</p>
             </div>
         </div>
         

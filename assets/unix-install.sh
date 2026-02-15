@@ -87,9 +87,11 @@ sleep 0.1
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "You can launch it from your Applications folder."
 else
+    # get exact path to dist/Ghost
+    GHOST_PATH="$(pwd)/dist/Ghost"
     echo "A compiled binary has been created in the dist folder."
     sleep 0.1
-    echo "You can run it with ./dist/Ghost or create a shortcut to it."
+    echo "You can run it with \`$GHOST_PATH\` or create a shortcut to it."
 fi
 sleep 0.1
 echo "If you have any issues, please report them on GitHub."

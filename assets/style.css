@@ -79,7 +79,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
     display: inline-block;
 }
 
-#console-img-container::after {
+/* #console-img-container::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -90,7 +90,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
     transform: perspective(75em) rotateX(10deg);
     transition: transform 0.25s ease-out;
     transform-origin: top;
-}
+} */
 
 #console-img-container::before {
     content: '';
@@ -112,7 +112,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
     display: inline-block;
 }
 
-#spypet-img-container::after {
+/* #spypet-img-container::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -121,7 +121,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
     mix-blend-mode: overlay;
     pointer-events: none;
     z-index: 2;
-}
+} */
 
 #spypet-img-container::before {
     content: '';
@@ -230,7 +230,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
         z-index: 1;
     }
 
-    #console-img-container::after {
+    /* #console-img-container::after {
         content: '';
         position: absolute;
         inset: 0;
@@ -240,7 +240,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
         pointer-events: none;
         z-index: 2;
         transform: none;
-    }
+    } */
 
     .navbar > .custom-container {
         max-width: 100%!important;

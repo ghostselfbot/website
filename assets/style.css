@@ -135,7 +135,6 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
 #spypet-img-container > img {
     position: relative;
     z-index: 1;
-    filter: blur(2px);
 }
 
 .features {

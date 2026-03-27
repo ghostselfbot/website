@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta name="og:title" content="Ghost - Your Discord, Your Rules">
-        <meta name="og:description" content="Ghost is a powerful and user-friendly selfbot for Discord, designed to enhance your experience with a sleek interface and a wide range of features.">
+        <meta name="og:description" content="Ghost is a powerful and user-friendly free and open-source selfbot for Discord, designed to enhance your experience with a sleek interface and a wide range of features.">
         <meta name="og:image" content="https://ghostt.cc/assets/ghost-2.jpg">
 
         <link rel="stylesheet" href="assets/style.css">
@@ -38,8 +38,8 @@
                         <h1 class="header-text">Your Discord</h1>
                         <h1 class="header-text">Your Rules</h1>
                         <div class="mt-5">
-                            <a href="#features" class="btn download-btn px-5 py-2 fw-bold" style="font-size: 1.5rem; letter-spacing: 0.05rem;">GET STARTED</a>
-                            <!-- <a href="https://github.com/ghostselfbot" class="btn btn-dark px-3 fw-bold">GITHUB</a> -->
+                            <a href="#features" class="btn download-btn px-4 py-2 me-1 fw-bold" style="letter-spacing: 0.05rem;">GET STARTED</a>
+                            <a href="https://github.com/ghostselfbot" class="btn btn-dark px-3 py-2 fw-bold">GITHUB</a>
                         </div>
                     </div>
                     <div class="col-lg-12 text-center mt-5">
@@ -52,14 +52,14 @@
         </div>
 
         <div class="container custom-container features" id="features">
-            <div class="mb-4">
-                <h2>Features</h2>
-                <p>Ghost is a powerful selfbot that offers a wide range of features to enhance your Discord experience.</p>
+            <div class="mb-5 pb-3 text-center" style="display: flex; flex-direction: column; align-items: center;">
+                <h1 class="header-text">Features</h1>
+                <h3 style="max-width: 40ch; text-align: center;">Ghost is a powerful selfbot that offers a wide range of features to enhance your Discord experience</h3>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
                         <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
                         <div class="card-body">
                             <h5 class="card-title"><i class="fa-solid fa-paintbrush fa-xs pe-1"></i> Customisation</h5>
@@ -67,16 +67,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
                         <div class="card-body">
                             <h5 class="card-title"><i class="fa-solid fa-code-branch fa-xs pe-1"></i> Open Source</h5>
                             <p class="card-text">Ghost is completely open source and free to use! Feel free to contribute or fork the project on GitHub.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
                         <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
                         <div class="card-body">
                             <h5 class="card-title"><i class="fa-solid fa-list fa-xs pe-1"></i> 150+ Commands</h5>
@@ -84,14 +84,30 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-4">
-                    <div class="card">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
                         <div class="card-body">
                             <h5 class="card-title"><i class="fa-solid fa-tools fa-xs pe-1"></i> Advanced Tools</h5>
                             <p class="card-text">Ghost includes advanced tools to better control your Discord account and manage your server. Backups, logs, global message search, etc...</p>
                         </div>
                     </div>
-                </div> -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-rocket fa-xs pe-1"></i> Fast Performance</h5>
+                            <p class="card-text">Ghost is built to ensure that your commands are executed quickly and seamlessly, providing a smooth user experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-cogs fa-xs pe-1"></i> Ongoing Development</h5>
+                            <p class="card-text">Ghost is constantly being improved with new features and enhancements, ensuring you always have the best experience.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -101,6 +117,10 @@
                 <h3 class="mb-5 pb-3">The most powerful tool we've ever built!</h3>
                 <div id="spypet-img-container">
                     <img src="assets/surveillance.png" class="img-fluid shadow-lg" style="border-radius: 10px;">
+                </div>
+                <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;" class="mt-4">
+                    <p class="mt-5" style="max-width: 60ch; display: flex;">Introducing Serveillance. The most powerful tool Ghost has ever had. Surveillance is a global message lookup tool that allows you to search through every message a user has ever sent in servers you share with them. We are not responsible for any misuse of this tool, please use it responsibly.</p>
+                    <!-- <p style="color: rgb(47, 57, 79)!important; font-style: italic;">We are not responsible for any misuse of this tool.</p> -->
                 </div>
             </div>
         </div>

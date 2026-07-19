@@ -20,11 +20,14 @@
             <div class="custom-container container">
                 <div class="row w-100">
                     <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                        <a href="#" class="navbar-brand fw-bold ms-4">Ghost</a>
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <img src="assets/ghost-2.jpg" class="navbar-logo ms-4" alt="Ghost Logo">
+                            <a href="#" class="navbar-brand fw-bold ms-3">Ghost</a>
+                        </div>
                         <div style="margin-left: auto!important; display: flex; align-items: center; justify-content: center;">
                             <a href="https://github.com/ghostselfbot/ghost" class="nav-link d-inline-block"><i class="fa-brands fa-github"></i></a>
                             <a href="https://discord.gg/ayz7eYvFsm" class="nav-link d-inline-block ms-3"><i class="fa-brands fa-discord"></i></a>
-                            <a href="https://github.com/ghostselfbot/ghost/releases/latest" class="nav-link d-inline-block btn download-btn px-2 fw-bold ms-4">DOWNLOAD</a>
+                            <a href="#setup" class="nav-link d-inline-block btn download-btn px-2 fw-bold ms-4">DOWNLOAD</a>
                         </div>
                     </div>
                 </div>
@@ -34,17 +37,19 @@
         <div class="header w-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center mb-4">
-                        <h1 class="header-text">Your Discord</h1>
-                        <h1 class="header-text">Your Rules</h1>
-                        <div class="mt-5">
-                            <a href="#features" class="btn download-btn px-4 py-2 me-1 fw-bold" style="letter-spacing: 0.05rem;">GET STARTED</a>
-                            <a href="https://github.com/ghostselfbot" class="btn btn-dark px-3 py-2 fw-bold">GITHUB</a>
+                    <div class="col-lg-12 text-center hero-copy">
+                        <!-- <p class="hero-eyebrow">Ghost</p> -->
+                        <h1 class="header-text">Your Discord,</h1>
+                        <h1 class="header-text">Your Rules.</h1>
+                        <p class="hero-description">A powerful open-source selfbot with the tools, control, and flexibility to make Discord yours again.</p>
+                        <div class="hero-actions">
+                            <a href="#features" class="btn download-btn hero-primary-action fw-bold">GET STARTED <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                            <a href="https://github.com/ghostselfbot" class="btn btn-dark hero-secondary-action fw-bold"><i class="fa-brands fa-github" aria-hidden="true"></i> GITHUB</a>
                         </div>
                     </div>
                     <div class="col-lg-12 text-center mt-5">
                         <div id="console-img-container" class="custom-container">
-                            <img src="assets/new-gui.png" class="img-fluid shadow-lg" style="border-radius: 10px;">
+                            <img src="assets/new-gui.png" class="img-fluid shadow-lg" alt="Ghost application interface">
                         </div>
                     </div>
                 </div>
@@ -52,17 +57,17 @@
         </div>
 
         <div class="container custom-container features" id="features">
-            <div class="mb-5 pb-3 text-center" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="features-heading mb-5 pb-3 text-center">
                 <h1 class="header-text">Features</h1>
-                <h3 style="max-width: 40ch; text-align: center;">Ghost is a powerful free selfbot that offers a wide range of features to enhance your Discord experience</h3>
+                <p class="features-intro mb-4">Ghost is a powerful selfbot that offers a wide range of features to enhance your Discord experience.</p>
             </div>
 
-            <div class="row">
+            <div class="row feature-grid">
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
-                        <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-paintbrush fa-xs pe-1"></i> Customisation</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i></span>
+                            <h5 class="card-title">Customisation</h5>
                             <p class="card-text">Ghost offers highly customisable image embeds. Your command will reply with a fully customised image embed. Custom title, colour, photo, footer, etc...</p>
                         </div>
                     </div>
@@ -70,16 +75,17 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-code-branch fa-xs pe-1"></i> Open Source</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
+                            <h5 class="card-title">Open Source</h5>
                             <p class="card-text">Ghost is completely open source and free to use! Feel free to contribute or fork the project on GitHub.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
-                        <!-- <div class="card-header" style="background-image: url('/assets/embeds.png'); background-position: bottom; background-size: cover; height: 200px;"></div> -->
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-list fa-xs pe-1"></i> 150+ Commands</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span>
+                            <h5 class="card-title">150+ Commands</h5>
                             <p class="card-text">There are over 150 commands available in Ghost, covering everything from moderation to fun and utility commands.</p>
                         </div>
                     </div>
@@ -87,7 +93,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-tools fa-xs pe-1"></i> Advanced Tools</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span>
+                            <h5 class="card-title">Advanced Tools</h5>
                             <p class="card-text">Ghost includes advanced tools to better control your Discord account and manage your server. Backups, logs, global message search, etc...</p>
                         </div>
                     </div>
@@ -95,7 +102,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-rocket fa-xs pe-1"></i> Fast Performance</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+                            <h5 class="card-title">Fast Performance</h5>
                             <p class="card-text">Ghost is built to ensure that your commands are executed quickly and seamlessly, providing a smooth user experience.</p>
                         </div>
                     </div>
@@ -103,7 +111,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 feature-card">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-cogs fa-xs pe-1"></i> Ongoing Development</h5>
+                            <span class="feature-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                            <h5 class="card-title">Ongoing Development</h5>
                             <p class="card-text">Ghost is constantly being improved with new features and enhancements, ensuring you always have the best experience.</p>
                         </div>
                     </div>
@@ -112,48 +121,68 @@
         </div>
 
         <div class="container-fluid spypet">
-            <div class="custom-container container text-center py-5 my-5">
-                <h1 class="header-text">SURVEILLANCE</h1>
-                <h3 class="mb-5 pb-3">The most powerful tool we've ever built!</h3>
-                <div id="spypet-img-container">
-                    <img src="assets/surveillance.png" class="img-fluid shadow-lg" style="border-radius: 10px;">
+            <div class="custom-container container surveillance-section text-center py-5 my-5">
+                <div class="surveillance-copy">
+                    <!-- <p class="section-label">Advanced discovery</p> -->
+                    <h1 class="header-text">Surveillance</h1>
+                    <p class="surveillance-intro mb-5">Global message lookup tool that allows you to search through every message a user has ever sent in servers you share.</p>
                 </div>
-                <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;" class="mt-4">
-                    <p class="mt-5" style="max-width: 60ch; display: flex;">Introducing Serveillance. The most powerful tool Ghost has ever had. Surveillance is a global message lookup tool that allows you to search through every message a user has ever sent in servers you share with them. We are not responsible for any misuse of this tool, please use it responsibly.</p>
-                    <!-- <p style="color: rgb(47, 57, 79)!important; font-style: italic;">We are not responsible for any misuse of this tool.</p> -->
+                <div id="spypet-img-container">
+                    <img src="assets/surveillance.png" class="img-fluid shadow-lg" alt="Ghost Surveillance interface">
+                </div>
+                <div class="surveillance-note">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <p>Use it responsibly and only in servers where you have permission to access the information. We are not responsible for any misuse.</p>
                 </div>
             </div>
         </div>
 
-        <div class="container custom-container" style="margin-top: 12rem; margin-bottom: 12rem;" id="setup">
+        <div class="container custom-container" style="margin-top: 8rem; margin-bottom: 8rem;" id="setup">
             <div class="mb-4">
-                <h2>Getting Started</h2>
-                <p>Use the commands below to run Ghost from source code. If you're using Windows, press the download button below.</p>
+                <h2>Download</h2>
+                <p id="download-intro">Finding the best download for your device...</p>
             </div>
-            <div class="terminal">
-                <p>git clone https://github.com/ghostselfbot/ghost</p>
-                <p>cd ghost</p>
-                <p>python3 -m venv .venv      <span class="terminal-comment"># create venv (requires Python 3.10+)</span></p>
-                <p>source .venv/bin/activate  <span class="terminal-comment"># or on Windows: .\.venv\Scripts\activate</span></p>
-                <p>pip install -r requirements.txt</p>
-                <p>python3 ghost.py</p>
+            <div class="download-panel mb-5">
+                <div class="download-panel-copy">
+                    <img src="assets/ghost-2.jpg" class="img-fluid download-panel-img" alt="Ghost Logo">
+                    <div>
+                        <!-- <p class="download-panel-label">Recommended download</p> -->
+                        <h3>Ghost v<span id="release-version">latest</span></h3>
+                        <!-- <h3 id="detected-os">Detecting your operating system</h3> -->
+                        <p id="download-description" class="m-0">Choose your operating system to get started.</p>
+                        <!-- <p id="release-version" class="release-version">Checking latest version...</p> -->
+                    </div>
+                </div>
+                <a id="detected-download" href="https://github.com/ghostselfbot/ghost/releases/download/latest/Ghost-Windows.zip" class="btn download-btn download-action fw-bold" download><i class="fa-solid fa-download" aria-hidden="true"></i><span>Download Ghost</span></a>
             </div>
-            <div class="mt-4 mb-2">
-                <p>If you're using macOS or Linux, run the command below to get a compiled binary.</p>
+            <div class="os-selector mb-5" aria-label="Choose your operating system">
+                <button class="os-option" type="button" data-os="windows" aria-pressed="false"><i class="fa-brands fa-windows"></i> Windows</button>
+                <button class="os-option" type="button" data-os="mac" aria-pressed="false"><i class="fa-brands fa-apple"></i> macOS</button>
+                <button class="os-option" type="button" data-os="linux" aria-pressed="false"><i class="fa-brands fa-linux"></i> Linux</button>
+                <button id="source-toggle" class="os-option source-option" type="button" aria-expanded="false"><i class="fa-solid fa-code-branch"></i> Source</button>
             </div>
-            <div class="terminal">
-                <p>curl -sSL https://www.ghostt.cc/assets/unix-install.sh | bash</p>
+            <div id="linux-install" class="linux-install mb-5" hidden>
+                <p class="mb-2">Linux is available through the installer below.</p>
+                <div class="terminal">
+                    <p>curl -sSL https://www.ghostt.cc/assets/unix-install.sh | bash</p>
+                </div>
             </div>
-            <div class="mt-4">
-                <a href="https://github.com/ghostselfbot/ghost/releases/latest" class="btn download-btn">Download</a>
-                <a href="https://github.com/ghostselfbot/ghost" class="btn btn-dark">Github</a>
-                <a href="https://github.com/ghostselfbot/ghost/wiki" class="btn btn-dark">Wiki</a>
+            <div id="source-install" class="source-install" hidden>
+                <p>Use these commands to run the latest source version on any supported platform.</p>
+                <div class="terminal">
+                    <p>git clone https://github.com/ghostselfbot/ghost</p>
+                    <p>cd ghost</p>
+                    <p>python3 -m venv .venv      <span class="terminal-comment"># create venv (requires Python 3.10+)</span></p>
+                    <p>source .venv/bin/activate  <span class="terminal-comment"># or on Windows: .\.venv\Scripts\activate</span></p>
+                    <p>pip install -r requirements.txt</p>
+                    <p>python3 ghost.py</p>
+                </div>
             </div>
         </div>
 
         <div class="footer container-fluid">
             <div class="container py-3 text-center">
-                <p class="pt-3">&copy; bennyscripts 2026</p>
+                <p class="pt-3">&copy; <a href="https://benny.fun/">bennyscripts</a> — 2026</p>
             </div>
         </div>
         

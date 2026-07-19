@@ -500,6 +500,26 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
     border-top: 2px solid rgba(27, 24, 84, 0.678);
 }
 
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.98);
+    transition: opacity 0.7s ease-out var(--reveal-delay, 0ms), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-reveal--fade {
+    transform: none;
+}
+
+.scroll-reveal--fade.is-visible {
+    transform: none;
+}
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -620,5 +640,13 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn {
 
     .terminal {
         overflow-x: scroll;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

@@ -12,6 +12,39 @@ function aboutReadMore() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    var revealTargets = document.querySelectorAll(".hero-copy > *, #console-img-container, .features-heading, .feature-card, .surveillance-copy, #spypet-img-container, .surveillance-note, #setup > div");
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    revealTargets.forEach(function (target, index) {
+        target.classList.add("scroll-reveal");
+        target.style.setProperty("--reveal-delay", (index % 6) * 90 + "ms");
+    });
+
+    document.querySelectorAll("#spypet-img-container").forEach(function (target) {
+        target.classList.add("scroll-reveal--fade");
+    });
+
+    function revealTarget(target) {
+        target.classList.add("is-visible");
+    }
+
+    if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+        revealTargets.forEach(revealTarget);
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    revealTarget(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14, rootMargin: "0px 0px -4%" });
+
+        revealTargets.forEach(function (target) {
+            revealObserver.observe(target);
+        });
+    }
+
     var platforms = {
         windows: {
             label: "Windows",

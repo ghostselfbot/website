@@ -12,7 +12,7 @@ function aboutReadMore() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var revealTargets = document.querySelectorAll(".hero-copy > *, #console-img-container, .features-heading, .feature-card, .surveillance-copy, #spypet-img-container, .surveillance-note, #setup > div");
+    var revealTargets = document.querySelectorAll(".hero-copy > *, #console-img-container, .features-heading, .feature-card, .surveillance-copy, #spypet-img-container, .surveillance-note, #setup > div, .sponsor-card, .gui-showcase-heading > *, .gui-showcase-layout");
     var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     revealTargets.forEach(function (target, index) {
@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelectorAll("#spypet-img-container").forEach(function (target) {
+        target.classList.add("scroll-reveal--fade");
+    });
+
+    document.querySelectorAll(".sponsor-card").forEach(function (target) {
+        target.classList.add("scroll-reveal--fade");
+    });
+
+    document.querySelectorAll(".gui-showcase-heading > *, .gui-showcase-layout").forEach(function (target) {
         target.classList.add("scroll-reveal--fade");
     });
 
@@ -161,6 +169,61 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    var guiFeatureButtons = document.querySelectorAll(".gui-feature-button");
+    var guiPreviewPanels = document.querySelectorAll(".gui-preview-panel");
+
+    function setGuiPanelState(panel, isActive) {
+        panel.classList.toggle("is-active", isActive);
+        panel.classList.remove("is-exiting");
+        panel.hidden = !isActive;
+        panel.setAttribute("aria-hidden", String(!isActive));
+    }
+
+    guiFeatureButtons.forEach(function (guiFeatureButton) {
+        guiFeatureButton.addEventListener("click", function () {
+            var targetPanelId = guiFeatureButton.dataset.guiTarget;
+            var currentPanel = document.querySelector(".gui-preview-panel.is-active");
+            var nextPanel = document.getElementById(targetPanelId);
+
+            guiFeatureButtons.forEach(function (button) {
+                var isSelected = button === guiFeatureButton;
+                button.classList.toggle("is-active", isSelected);
+                button.setAttribute("aria-selected", String(isSelected));
+            });
+
+            if (!nextPanel || nextPanel === currentPanel) {
+                return;
+            }
+
+            if (currentPanel) {
+                currentPanel.classList.add("is-exiting");
+                currentPanel.classList.remove("is-active");
+                currentPanel.setAttribute("aria-hidden", "true");
+
+                currentPanel.addEventListener("transitionend", function onTransitionEnd(event) {
+                    if (event.propertyName !== "opacity") {
+                        return;
+                    }
+
+                    currentPanel.hidden = true;
+                    currentPanel.classList.remove("is-exiting");
+                    currentPanel.removeEventListener("transitionend", onTransitionEnd);
+                });
+            }
+
+            nextPanel.hidden = false;
+            nextPanel.setAttribute("aria-hidden", "false");
+
+            window.requestAnimationFrame(function () {
+                nextPanel.classList.add("is-active");
+            });
+        });
+    });
+
+    guiPreviewPanels.forEach(function (panel) {
+        panel.setAttribute("aria-hidden", String(panel.hidden));
+    });
+
     var consoleImage = document.querySelector("#console-img-container > img");
     var desktopViewport = window.matchMedia("(min-width: 769px)");
 
@@ -198,6 +261,31 @@ document.addEventListener("DOMContentLoaded", function () {
             surveillancePreview.style.transform = "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
         });
         surveillancePreview.addEventListener("pointerleave", resetSurveillancePreview);
+    }
+
+    var guiPreviewFrame = document.querySelector(".gui-preview-frame");
+
+    function resetGuiPreviewFrame() {
+        if (!guiPreviewFrame) {
+            return;
+        }
+
+        guiPreviewFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+        guiPreviewFrame.classList.remove("is-tilting");
+    }
+
+    if (guiPreviewFrame && finePointer.matches) {
+        guiPreviewFrame.addEventListener("pointermove", function (event) {
+            var bounds = guiPreviewFrame.getBoundingClientRect();
+            var horizontalPosition = (event.clientX - bounds.left) / bounds.width - 0.5;
+            var verticalPosition = (event.clientY - bounds.top) / bounds.height - 0.5;
+            var rotateY = horizontalPosition * 7;
+            var rotateX = verticalPosition * -7;
+
+            guiPreviewFrame.classList.add("is-tilting");
+            guiPreviewFrame.style.transform = "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
+        });
+        guiPreviewFrame.addEventListener("pointerleave", resetGuiPreviewFrame);
     }
     loadLatestRelease();
     selectPlatform(detectedPlatform);

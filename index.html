@@ -136,15 +136,58 @@
                         <div class="card-body">
                             <span class="feature-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
                             <h5 class="card-title">Ongoing Development</h5>
-                            <p class="card-text">Ghost is constantly being improved with new features and enhancements, ensuring you always have the best experience.</p>
+                            <p class="card-text">Ghost continues to evolve through considered releases that bring meaningful features and improvements.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid spypet">
-            <div class="custom-container container surveillance-section text-center py-5 my-5">
+        <section class=" gui-showcase" aria-labelledby="gui-heading">
+            <div class="custom-container container gui-showcase-content">
+                <div class="gui-showcase-heading text-center mb-4">
+                    <h2 id="gui-heading" class="header-text">Explore Ghost</h2>
+                    <p>See how Ghost brings your account tools, customisation, and automation together in one easy-to-use desktop interface.</p>
+                </div>
+                <div class="gui-showcase-layout">
+                    <div class="gui-feature-list" role="tablist" aria-label="Ghost GUI views">
+                        <button class="gui-feature-button is-active" type="button" role="tab" id="gui-dashboard-tab" aria-selected="true" aria-controls="gui-dashboard-panel" data-gui-target="gui-dashboard-panel">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i>
+                            <span><strong>Dashboard</strong><small>Account status and activity</small></span>
+                        </button>
+                        <button class="gui-feature-button" type="button" role="tab" id="gui-presence-tab" aria-selected="false" aria-controls="gui-presence-panel" data-gui-target="gui-presence-panel">
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                            <span><strong>Rich Presence</strong><small>Build and preview your presence</small></span>
+                        </button>
+                        <button class="gui-feature-button" type="button" role="tab" id="gui-scripts-tab" aria-selected="false" aria-controls="gui-scripts-panel" data-gui-target="gui-scripts-panel">
+                            <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+                            <span><strong>Local Scripts</strong><small>Manage your custom scripts</small></span>
+                        </button>
+                        <button class="gui-feature-button" type="button" role="tab" id="gui-embeds-tab" aria-selected="false" aria-controls="gui-embeds-panel" data-gui-target="gui-embeds-panel">
+                            <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
+                            <span><strong>Custom Embeds</strong><small>Fine-tune every detail</small></span>
+                        </button>
+                    </div>
+                    <div class="gui-preview-frame">
+                        <div class="gui-preview-panel is-active" id="gui-dashboard-panel" role="tabpanel" aria-labelledby="gui-dashboard-tab">
+                            <img src="assets/gui/home-new.png" alt="Ghost dashboard showing account status and activity console">
+                        </div>
+                        <div class="gui-preview-panel" id="gui-presence-panel" role="tabpanel" aria-labelledby="gui-presence-tab" hidden>
+                            <img src="assets/gui/rpc-new.png" alt="Ghost Rich Presence settings with a live profile preview">
+                        </div>
+                        <div class="gui-preview-panel" id="gui-scripts-panel" role="tabpanel" aria-labelledby="gui-scripts-tab" hidden>
+                            <img src="assets/gui/scripts-new.png" alt="Ghost scripts page showing local script management">
+                        </div>
+                        <div class="gui-preview-panel" id="gui-embeds-panel" role="tabpanel" aria-labelledby="gui-embeds-tab" hidden>
+                            <img src="assets/gui/theming-new.png" alt="Ghost theming interface with a custom embed preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class=" spypet">
+            <div class="custom-container container surveillance-section text-center">
                 <div class="surveillance-copy">
                     <!-- <p class="section-label">Advanced discovery</p> -->
                     <h1 class="header-text">Surveillance</h1>
@@ -155,7 +198,7 @@
                 </div>
                 <div class="surveillance-note">
                     <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-                    <p>Use it responsibly and only in servers where you have permission to access the information. We are not responsible for any misuse.</p>
+                    <p style="font-size: 10pt;">Use it responsibly and only in servers where you have permission to access the information. We are not responsible for any misuse.</p>
                 </div>
             </div>
         </div>
@@ -165,7 +208,7 @@
                 <h2>Download</h2>
                 <p id="download-intro">Finding the best download for your device...</p>
             </div>
-            <div class="download-panel mb-5">
+            <div class="download-panel mb-2">
                 <div class="download-panel-copy">
                     <img src="assets/ghost-2.jpg" class="img-fluid download-panel-img" alt="Ghost Logo">
                     <div>
@@ -178,6 +221,21 @@
                 </div>
                 <a id="detected-download" href="https://github.com/ghostselfbot/ghost/releases/download/latest/Ghost-Windows.zip" class="btn download-btn download-action fw-bold" download><i class="fa-solid fa-download" aria-hidden="true"></i><span>Download Ghost</span></a>
             </div>
+            <aside class="sponsor-card mb-4" aria-labelledby="sponsor-heading">
+                <div class="sponsor-content">
+                    <div class="sponsor-copy">
+                        <span class="sponsor-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+                        <div>
+                            <h2 id="sponsor-heading">Support Ghost</h2>
+                            <p>Help keep Ghost free, open source, and actively developed.</p>
+                        </div>
+                    </div>
+                    <a href="https://github.com/sponsors/ghostselfbot" class="btn download-btn sponsor-action fw-bold" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span>Sponsor on GitHub</span>
+                    </a>
+                </div>
+            </aside>
             <div class="os-selector mb-5" aria-label="Choose your operating system">
                 <button class="os-option" type="button" data-os="windows" aria-pressed="false"><i class="fa-brands fa-windows"></i> Windows</button>
                 <button class="os-option" type="button" data-os="mac" aria-pressed="false"><i class="fa-brands fa-apple"></i> macOS</button>
@@ -190,7 +248,7 @@
                     <p>curl -sSL https://www.ghostt.cc/assets/unix-install.sh | bash</p>
                 </div>
             </div>
-            <div id="source-install" class="source-install" hidden>
+            <div id="source-install" class="source-install mb-5" hidden>
                 <p>Use these commands to run the latest source version on any supported platform.</p>
                 <div class="terminal">
                     <p>git clone https://github.com/ghostselfbot/ghost</p>
@@ -201,11 +259,69 @@
                     <p>python3 ghost.py</p>
                 </div>
             </div>
+
+            <div class="mb-4">
+                <h2>Useful Resources</h2>
+            </div>
+            <aside class="trust-card" aria-labelledby="trust-heading">
+                <button class="trust-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trust-details" aria-expanded="false" aria-controls="trust-details">
+                    <span class="trust-toggle-copy">
+                        <span class="trust-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+                        <span>
+                            <!-- <span class="trust-label">Built since 2021</span> -->
+                            <span id="trust-heading" class="trust-title">Trust &amp; Responsible Use</span>
+                        </span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down trust-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="trust-details" class="collapse">
+                    <div class="trust-details">
+                        <p>Ghost is an independent open-source project and is not affiliated with, endorsed by, or supported by Discord. Using selfbots violates Discord's Terms of Service and can result in account restrictions or termination.</p>
+                        <div class="trust-points">
+                            <p><strong>Independent project:</strong> Ghost is maintained independently and has no official connection to Discord.</p>
+                            <p><strong>Account risk:</strong> Understand and accept the potential account consequences before choosing to use Ghost.</p>
+                            <p><strong>Release cadence:</strong> Ghost is actively worked on, but full releases typically arrive every few months and focus on substantial features, refinements, and fixes.</p>
+                            <p><strong>Your responsibility:</strong> Respect privacy, follow community rules, and never use Ghost to harm, harass, spam, or access information without permission.</p>
+                        </div>
+                        <p class="trust-disclaimer">You are responsible for how you use Ghost. Project maintainers are not responsible for misuse or consequences resulting from its use.</p>
+                    </div>
+                </div>
+            </aside>
+            <aside class="faq-card" aria-labelledby="faq-heading">
+                <button class="faq-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#faq-details" aria-expanded="false" aria-controls="faq-details">
+                    <span class="faq-toggle-copy">
+                        <span class="faq-icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span>
+                        <span id="faq-heading" class="faq-title">Frequently Asked Questions</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="faq-details" class="collapse">
+                    <div class="faq-details">
+                        <dl class="faq-list">
+                            <div><dt>What is Ghost?</dt><dd>Ghost is a powerful open-source Discord selfbot that gives you better control over your Discord experience, lets you troll friends, and moderate servers from your own account.</dd></div>
+                            <div><dt>Is Ghost free and open source?</dt><dd>Ghost is free and open source, and will stay open source for the foreseeable future. You can access the source on <a href="https://github.com/ghostselfbot/ghost" target="_blank" rel="noopener noreferrer">GitHub</a>.</dd></div>
+                            <div><dt>Which operating systems does Ghost support?</dt><dd>Ghost officially supports macOS and Windows. Some Linux distributions will work but require building from source. Ghost is built on macOS, so platform-specific issues may occur.</dd></div>
+                            <div><dt>How do I install Ghost?</dt><dd>Use the download links above. To run Ghost from source, refer to the <a href="https://github.com/ghostselfbot/ghost/wiki" target="_blank" rel="noopener noreferrer">GitHub wiki</a>.</dd></div>
+                            <div><dt>Does Ghost require Python?</dt><dd>Ghost requires Python 3.10 through 3.13 when running from source.</dd></div>
+                            <div><dt>Where can I find the latest version and release notes?</dt><dd>The latest version and release notes are available on <a href="https://github.com/ghostselfbot/ghost/releases/latest" target="_blank" rel="noopener noreferrer">GitHub Releases</a>.</dd></div>
+                            <div><dt>How often is Ghost updated?</dt><dd>There is no fixed update schedule for Ghost. Updates usually arrive a few months apart.</dd></div>
+                            <div><dt>Why are updates not more frequent?</dt><dd>Ghost is a solo passion project maintained by Benny. Time is limited, but fresh updates and changes still come.</dd></div>
+                            <div><dt>Is using Ghost against Discord's Terms of Service?</dt><dd>Using Ghost and other selfbots is against Discord's Terms of Service. Use it carefully; the project is not responsible for account termination caused by its use.</dd></div>
+                            <div><dt>Can using Ghost restrict or terminate my account?</dt><dd>Because selfbots are against Discord's Terms of Service, there is a chance your account could be restricted or terminated. Understand and accept that risk before using Ghost.</dd></div>
+                            <div><dt>Is Ghost affiliated with Discord?</dt><dd>No. Ghost is not affiliated with Discord.</dd></div>
+                            <div><dt>Where can I get help or report a bug?</dt><dd>Get help or report bugs by creating a new <a href="https://github.com/ghostselfbot/ghost/issues/new/choose" target="_blank" rel="noopener noreferrer">GitHub issue</a>.</dd></div>
+                            <div><dt>How can I suggest a feature?</dt><dd>Create a <a href="https://github.com/ghostselfbot/ghost/issues/new/choose" target="_blank" rel="noopener noreferrer">GitHub issue</a> or join the <a href="https://discord.gg/ayz7eYvFsm" target="_blank" rel="noopener noreferrer">Discord server</a>.</dd></div>
+                            <div><dt>How can I contribute to Ghost?</dt><dd>Contribute by creating a pull request on <a href="https://github.com/ghostselfbot/ghost" target="_blank" rel="noopener noreferrer">GitHub</a>.</dd></div>
+                            <div><dt>How can I support Ghost?</dt><dd>Support Ghost through the <a href="https://github.com/sponsors/ghostselfbot" target="_blank" rel="noopener noreferrer">GitHub Sponsors page</a>.</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </aside>
         </div>
 
-        <div class="footer container-fluid">
+        <div class="footer ">
             <div class="container py-3 text-center">
-                <p class="pt-3">&copy; <a href="https://benny.fun/">bennyscripts</a> — 2026</p>
+                <p class="pt-3">&copy; <a href="https://benny.fun/">bennyscripts</a> — 2021-2026</p>
             </div>
         </div>
         

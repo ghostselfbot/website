@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <title>Ghost — Stats</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Live Ghost usage statistics, installs, platform breakdowns, and version adoption trends.">
+        <link rel="canonical" href="https://www.ghostt.cc/stats/">
+
+        <meta property="og:title" content="Ghost — Stats">
+        <meta property="og:description" content="Live Ghost usage statistics, installs, platform breakdowns, and version adoption trends.">
+        <meta property="og:image" content="https://ghostt.cc/assets/ghost-2.jpg">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.ghostt.cc/stats/">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Ghost Stats",
+            "description": "Live Ghost usage statistics, installs, platform breakdowns, and version adoption trends.",
+            "url": "https://www.ghostt.cc/stats/",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Ghost",
+                "url": "https://www.ghostt.cc/"
+            }
+        }
+        </script>
+
+        <link rel="stylesheet" href="/assets/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="navbar sticky-top">
+            <div class="custom-container container">
+                <div class="row w-100">
+                    <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <img src="/assets/ghost-2.jpg" class="navbar-logo ms-4" alt="Ghost Logo">
+                            <a href="/" class="navbar-brand fw-bold ms-3">Ghost</a>
+                        </div>
+                        <div style="margin-left: auto!important; display: flex; align-items: center; justify-content: center;">
+                            <a href="https://github.com/ghostselfbot/ghost" class="nav-link d-inline-block"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://discord.gg/ayz7eYvFsm" class="nav-link d-inline-block ms-3"><i class="fa-brands fa-discord"></i></a>
+                            <a href="/#setup" class="nav-link d-inline-block btn download-btn px-2 fw-bold ms-4">DOWNLOAD</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="stats-page">
+            <section class="stats-hero">
+                <div class="container custom-container stats-shell">
+                    <!-- <div class="stats-hero-copy mb-5">
+                        <p class="section-label stats-kicker mb-2">Live dashboard</p>
+                        <h1 class="stats-title">Ghost usage statistics</h1>
+                        <p class="stats-intro">A live look at installs, activity, release adoption, and runtime breakdowns pulled directly from the Ghost stats API.</p>
+                    </div> -->
+
+                    <div class="stats-featured-metric" aria-live="polite">
+                        <article class="stats-featured-value">
+                            <!-- <i class="fa-solid fa-users" aria-hidden="true"></i> -->
+                            <span class="mb-2">Total users</span>
+                            <strong id="featured-total-installs">--</strong>
+                        </article>
+                        <article class="stats-featured-value">
+                            <!-- <i class="fa-solid fa-bolt" aria-hidden="true"></i> -->
+                            <span class="mb-2">Active users</span>
+                            <strong id="featured-active-last-24h">--</strong>
+                        </article>
+                        <article class="stats-featured-value">
+                            <!-- <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> -->
+                            <span class="mb-2">New users this week</span>
+                            <strong id="featured-installs-week">--</strong>
+                        </article>
+                        <article class="stats-featured-value">
+                            <!-- <i class="fa-solid fa-code-branch" aria-hidden="true"></i> -->
+                            <span class="mb-2">Latest version</span>
+                            <strong id="featured-latest-version">--</strong>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container custom-container stats-grid-section">
+                <div class="stats-layout">
+                    <section class="stats-card card stats-breakdown-card">
+                        <div class="stats-card-heading">
+                            <div>
+                                <p class="stats-card-eyebrow">Adoption</p>
+                                <h2>Platform breakdown</h2>
+                            </div>
+                            <span class="stats-chip" id="platform-total-chip">Total installs</span>
+                        </div>
+                        <div id="platform-breakdown" class="stats-platform-chart" role="img" aria-label="Platform distribution"></div>
+                    </section>
+
+                    <section class="stats-card card stats-breakdown-card">
+                        <div class="stats-card-heading">
+                            <div>
+                                <p class="stats-card-eyebrow">Release</p>
+                                <h2>Version adoption</h2>
+                            </div>
+                            <span class="stats-chip">Current build</span>
+                        </div>
+                        <div id="version-breakdown" class="stats-bars"></div>
+                    </section>
+
+                    <!-- <section class="stats-card card stats-breakdown-card stats-wide-card">
+                        <div class="stats-card-heading">
+                            <div>
+                                <p class="stats-card-eyebrow">Runtime</p>
+                                <h2>Python versions</h2>
+                            </div>
+                            <span class="stats-chip">Most common runtimes</span>
+                        </div>
+                        <div id="python-breakdown" class="stats-bars stats-bars-two-column"></div>
+                    </section> -->
+                </div>
+
+                <aside class="stats-info-card" aria-live="polite">
+                    <span class="stats-status-label">Live data</span>
+                    <strong id="stats-status-text">Loading latest metrics</strong>
+                    <span id="stats-last-updated">Fetching data...</span>
+                    <a href="https://benny.fun/api/ghost/stats" target="_blank" rel="noopener noreferrer">Open raw JSON</a>
+                </aside>
+            </section>
+        </main>
+
+        <div class="footer ">
+            <div class="container py-3 text-center">
+                <p class="pt-3">&copy; <a href="https://benny.fun/">bennyscripts</a> — 2021-2026</p>
+            </div>
+        </div>
+
+        <script>
+            const STATS_API = 'https://benny.fun/api/ghost/stats';
+            const FALLBACK_STATS = {
+                active_last_14d: 48,
+                active_last_24h: 5,
+                active_last_30d: 96,
+                active_last_7d: 25,
+                active_recent: 2,
+                active_recent_window_minutes: 10,
+                latest_version: '4.2.3',
+                new_installs_month: 85,
+                new_installs_today: 0,
+                new_installs_week: 19,
+                platform_breakdown: {
+                    android: 6,
+                    darwin: 17,
+                    linux: 19,
+                    win32: 101
+                },
+                python_version_breakdown: {
+                    '3.10.0': 3,
+                    '3.10.11': 5,
+                    '3.10.16': 1,
+                    '3.10.21': 1,
+                    '3.11.0': 5,
+                    '3.11.14': 1,
+                    '3.11.15': 3,
+                    '3.11.16': 1,
+                    '3.11.6': 1,
+                    '3.11.9': 3,
+                    '3.12.0': 2,
+                    '3.12.10': 8,
+                    '3.12.13': 2,
+                    '3.12.14': 3,
+                    '3.12.3': 2,
+                    '3.12.4': 6,
+                    '3.12.6': 1,
+                    '3.13.0': 1,
+                    '3.13.11': 1,
+                    '3.13.12': 1,
+                    '3.13.13': 5,
+                    '3.13.14': 7,
+                    '3.13.15': 2,
+                    '3.13.3': 61,
+                    '3.13.5': 2,
+                    '3.13.6': 8,
+                    '3.13.7': 1,
+                    '3.14.4': 1,
+                    '3.14.6': 3,
+                    '3.14.7': 2
+                },
+                total_installs: 143,
+                version_breakdown: {
+                    '4.2.3': 78,
+                    '4.2.3-dev': 5,
+                    '4.2.4-dev': 60
+                }
+            };
+
+            const statusText = document.getElementById('stats-status-text');
+            const lastUpdated = document.getElementById('stats-last-updated');
+            const platformTotalChip = document.getElementById('platform-total-chip');
+            const featuredActiveLast24h = document.getElementById('featured-active-last-24h');
+            const featuredTotalInstalls = document.getElementById('featured-total-installs');
+            const featuredInstallsWeek = document.getElementById('featured-installs-week');
+            const featuredLatestVersion = document.getElementById('featured-latest-version');
+
+            const niceNumber = new Intl.NumberFormat('en-US');
+            const platformLabels = {
+                android: 'Android',
+                darwin: 'macOS',
+                linux: 'Linux',
+                win32: 'Windows'
+            };
+
+            function formatValue(value, key) {
+                if (key === 'latest_version') {
+                    return String(value);
+                }
+
+                if (typeof value === 'number') {
+                    return niceNumber.format(value);
+                }
+
+                return String(value);
+            }
+
+            function toRows(entries) {
+                return entries
+                    .sort((left, right) => right[1] - left[1])
+                    .map(([label, value]) => ({ label, value }));
+            }
+
+            function sumRows(rows) {
+                return rows.reduce((sum, row) => sum + row.value, 0);
+            }
+
+            function renderBars(container, rows, total, formatter) {
+                container.innerHTML = '';
+
+                rows.forEach(({ label, value }, index) => {
+                    const percentage = total > 0 ? (value / total) * 100 : 0;
+                    const row = document.createElement('div');
+                    row.className = 'stats-bar-row';
+                    row.style.setProperty('--bar-delay', `${index * 70}ms`);
+
+                    row.innerHTML = `
+                        <div class="stats-bar-meta">
+                            <span class="stats-bar-label">${label}</span>
+                            <span class="stats-bar-value">${formatter(value)}</span>
+                        </div>
+                        <div class="stats-bar-track" aria-hidden="true">
+                            <div class="stats-bar-fill" style="width: ${Math.max(percentage, value > 0 ? 3 : 0)}%;"></div>
+                        </div>
+                    `;
+
+                    container.appendChild(row);
+                });
+            }
+
+            function renderPlatformChart(container, rows) {
+                const total = sumRows(rows);
+                const colors = ['#7466ff', '#4f8cff', '#24c7a0', '#f0b45b'];
+                const chartSize = 184;
+                const center = chartSize / 2;
+                const radius = 70;
+                const strokeWidth = 38;
+                let currentAngle = 0;
+                const slices = rows.map(({ label, value }, index) => {
+                    const percentage = total > 0 ? (value / total) * 100 : 0;
+                    const nextAngle = currentAngle + percentage;
+                    const circumference = 2 * Math.PI * radius;
+                    const dashLength = (percentage / 100) * circumference;
+                    const dashOffset = -(currentAngle / 100) * circumference;
+                    const slice = {
+                        color: colors[index % colors.length],
+                        dashLength,
+                        dashOffset,
+                        label,
+                        percentage
+                    };
+                    currentAngle = nextAngle;
+                    return slice;
+                });
+
+                container.innerHTML = `
+                    <div class="stats-donut-wrap">
+                        <svg class="stats-donut" viewBox="0 0 ${chartSize} ${chartSize}" role="img" aria-label="Platform distribution">
+                            ${slices.map(({ color, dashLength, dashOffset, label, percentage }) => `
+                                <circle class="stats-donut-segment" cx="${center}" cy="${center}" r="${radius}"
+                                    pathLength="${2 * Math.PI * radius}" stroke="${color}" stroke-width="${strokeWidth}"
+                                    stroke-dasharray="${dashLength} ${2 * Math.PI * radius - dashLength}"
+                                    stroke-dashoffset="${dashOffset}" data-label="${label}" data-percentage="${percentage.toFixed(1)}"></circle>
+                            `).join('')}
+                        </svg>
+                        <div class="stats-donut-tooltip" role="tooltip" hidden></div>
+                    </div>
+                    <div class="stats-platform-legend">
+                        ${rows.map(({ label, value }, index) => `
+                            <div class="stats-platform-legend-item">
+                                <span class="stats-platform-swatch" style="--platform-color: ${colors[index % colors.length]};" aria-hidden="true"></span>
+                                <span>${label}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+
+                const tooltip = container.querySelector('.stats-donut-tooltip');
+                const donutWrap = container.querySelector('.stats-donut-wrap');
+
+                function positionTooltip(event) {
+                    const bounds = donutWrap.getBoundingClientRect();
+                    tooltip.style.left = `${event.clientX - bounds.left}px`;
+                    tooltip.style.top = `${event.clientY - bounds.top}px`;
+                }
+
+                container.querySelectorAll('.stats-donut-segment').forEach((segment) => {
+                    segment.addEventListener('pointerenter', (event) => {
+                        tooltip.textContent = `${segment.dataset.label}: ${segment.dataset.percentage}%`;
+                        tooltip.hidden = false;
+                        positionTooltip(event);
+                    });
+                    segment.addEventListener('pointermove', positionTooltip);
+                    segment.addEventListener('pointerleave', () => {
+                        tooltip.hidden = true;
+                    });
+                });
+            }
+
+            function renderDashboard(data, statusMessage, lastUpdatedMessage) {
+                const totalInstalls = Number(data.total_installs || 0);
+
+                featuredActiveLast24h.textContent = niceNumber.format(Number(data.active_last_24h || 0));
+                featuredTotalInstalls.textContent = niceNumber.format(totalInstalls);
+                featuredInstallsWeek.textContent = niceNumber.format(Number(data.new_installs_week || 0));
+                featuredLatestVersion.textContent = formatValue(data.latest_version, 'latest_version');
+
+                const platformRows = toRows(Object.entries(data.platform_breakdown || {}))
+                    .map(({ label, value }) => ({ label: platformLabels[label] || label, value }));
+                const versionRows = toRows(Object.entries(data.version_breakdown || {}));
+                // const pythonRows = toRows(Object.entries(data.python_version_breakdown || {})).slice(0, 10);
+                // const pythonTotal = sumRows(pythonRows) || totalInstalls;
+
+                platformTotalChip.textContent = `${niceNumber.format(totalInstalls)} installs`;
+                renderPlatformChart(document.getElementById('platform-breakdown'), platformRows);
+                renderBars(document.getElementById('version-breakdown'), versionRows, totalInstalls, (value) => niceNumber.format(value));
+                // renderBars(document.getElementById('python-breakdown'), pythonRows, pythonTotal, (value) => niceNumber.format(value));
+
+                statusText.textContent = statusMessage;
+                lastUpdated.textContent = lastUpdatedMessage;
+            }
+
+            async function loadStats() {
+                if (['localhost', '127.0.0.1', '::1'].includes(location.hostname)) {
+                    renderDashboard(FALLBACK_STATS, 'Local preview uses the provided snapshot', 'Live data is attempted on the deployed Ghost site');
+                    return;
+                }
+
+                try {
+                    const response = await fetch(STATS_API, { cache: 'no-store' });
+
+                    if (!response.ok) {
+                        throw new Error(`Request failed with status ${response.status}`);
+                    }
+
+                    renderDashboard(await response.json(), `Live data loaded from ${STATS_API}`, `Latest version: live • Active recent: updated in real time`);
+                } catch (error) {
+                    renderDashboard(FALLBACK_STATS, 'Live data unavailable locally, showing the provided snapshot', 'Snapshot based on the example payload you supplied');
+                }
+            }
+
+            loadStats();
+        </script>
+    </body>
+</html>

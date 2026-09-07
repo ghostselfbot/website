@@ -37,6 +37,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/e03bde962b.js" crossorigin="anonymous"></script>
+
+        <style>
+            h1, h2, h3 {
+                font-weight: 700!important;
+            }
+
+            h2 {
+                font-size: clamp(2rem, 3vw, 3.1rem)!important;
+            }
+        </style>
     </head>
     <body>
         <div class="navbar sticky-top">
@@ -79,74 +89,62 @@
             </div>
         </div>
 
-        <div class="container custom-container features" id="features" style="overflow: hidden;">
-            <div class="features-heading mb-5 pb-3 text-center">
-                <h1 class="header-text">Features</h1>
-                <p class="features-intro mb-4">Ghost is a powerful selfbot that offers a wide range of features to enhance your Discord experience.</p>
-            </div>
+        <section class="container custom-container features" id="features" aria-labelledby="features-heading">
+            <div class="features-bento">
+                <div class="features-mosaic">
+                    <article class="feature-tile feature-tile-commands">
+                        <i class="fa-solid fa-list" aria-hidden="true"></i>
+                        <strong>150+</strong>
+                        <span>Commands ready to use</span>
+                    </article>
+                    <article class="feature-tile feature-tile-source">
+                        <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                        <span>Free and open source</span>
+                    </article>
+                    <article class="feature-tile feature-tile-tools">
+                        <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        <span>Account tools, trolling, moderation and more</span>
+                    </article>
+                    <div class="feature-preview">
+                        <img src="assets/gui/home-new.png" alt="Ghost dashboard interface">
+                    </div>
+                </div>
 
-            <div class="row feature-grid">
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i></span>
-                            <h5 class="card-title">Customisation</h5>
-                            <p class="card-text">Ghost offers highly customisable image embeds. Your command will reply with a fully customised image embed. Custom title, colour, photo, footer, etc...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
-                            <h5 class="card-title">Open Source</h5>
-                            <p class="card-text">Ghost is completely open source and free to use! Feel free to contribute or fork the project on GitHub.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span>
-                            <h5 class="card-title">150+ Commands</h5>
-                            <p class="card-text">There are over 150 commands available in Ghost, covering everything from moderation to fun and utility commands.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span>
-                            <h5 class="card-title">Advanced Tools</h5>
-                            <p class="card-text">Ghost includes advanced tools to better control your Discord account and manage your server. Backups, logs, global message search, etc...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
-                            <h5 class="card-title">Fast Performance</h5>
-                            <p class="card-text">Ghost is built to ensure that your commands are executed quickly and seamlessly, providing a smooth user experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100 feature-card">
-                        <div class="card-body">
-                            <span class="feature-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
-                            <h5 class="card-title">Ongoing Development</h5>
-                            <p class="card-text">Ghost continues to evolve through considered releases that bring meaningful features and improvements.</p>
-                        </div>
+                <div class="features-copy">
+                    <!-- <p class="section-label">Features</p> -->
+                    <h2 id="features-heading">Built for a better Discord experience</h2>
+                    <p class="features-intro">Ghost brings a plethora of features to enhance your experience on Discord.</p>
+                    <div class="feature-details">
+                        <article class="feature-detail is-featured">
+                            <span class="feature-detail-icon"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Customisation</h3>
+                                <p>Fully customise your command outputs with image embeds, codeblocks and more.</p>
+                            </div>
+                        </article>
+                        <article class="feature-detail">
+                            <span class="feature-detail-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Fast performance</h3>
+                                <p>Commands are fast and responsive, ensuring a smooth user experience.</p>
+                            </div>
+                        </article>
+                        <article class="feature-detail">
+                            <span class="feature-detail-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Ongoing development</h3>
+                                <p>Thoughtful releases deliver meaningful features, refinements, and fixes.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <section class=" gui-showcase" aria-labelledby="gui-heading">
             <div class="custom-container container gui-showcase-content">
                 <div class="gui-showcase-heading text-center mb-4">
-                    <h2 id="gui-heading" class="header-text">Explore Ghost</h2>
+                    <h2 id="gui-heading">Explore Ghost</h2>
                     <p>See how Ghost brings your account tools, customisation, and automation together in one easy-to-use desktop interface.</p>
                 </div>
                 <div class="gui-showcase-layout">
@@ -186,11 +184,31 @@
             </div>
         </section>
 
+        <section class="sponsor-section" aria-labelledby="sponsor-heading">
+            <div class="container custom-container sponsor-section-inner">
+                <aside class="sponsor-card--wide" aria-labelledby="sponsor-heading">
+                    <div class="sponsor-content">
+                        <div class="sponsor-copy">
+                            <span class="sponsor-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+                            <div>
+                                <h5 id="sponsor-heading">Support Ghost</h5>
+                                <p>Help keep Ghost free, open source, and actively developed.</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/sponsors/ghostselfbot" class="btn download-btn sponsor-action fw-bold" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                            <span>Sponsor on GitHub</span>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
         <div class=" spypet">
             <div class="custom-container container surveillance-section text-center">
                 <div class="surveillance-copy">
                     <!-- <p class="section-label">Advanced discovery</p> -->
-                    <h1 class="header-text">Surveillance</h1>
+                    <h1>Surveillance</h1>
                     <p class="surveillance-intro mb-5">Global message lookup tool that allows you to search through every message a user has ever sent in servers you share.</p>
                 </div>
                 <div id="spypet-img-container">
@@ -203,9 +221,9 @@
             </div>
         </div>
 
-        <div class="container custom-container" style="margin-top: 8rem; margin-bottom: 8rem;" id="setup">
+        <div class="container custom-container download-section" id="setup">
             <div class="mb-4">
-                <h2>Download</h2>
+                <h3>Download</h3>
                 <p id="download-intro">Finding the best download for your device...</p>
             </div>
             <div class="download-panel mb-2">
@@ -213,7 +231,7 @@
                     <img src="assets/ghost-2.jpg" class="img-fluid download-panel-img" alt="Ghost Logo">
                     <div>
                         <!-- <p class="download-panel-label">Recommended download</p> -->
-                        <h3>Ghost v<span id="release-version">latest</span></h3>
+                        <h4>Ghost v<span id="release-version">latest</span></h4>
                         <!-- <h3 id="detected-os">Detecting your operating system</h3> -->
                         <p id="download-description" class="m-0">Choose your operating system to get started.</p>
                         <!-- <p id="release-version" class="release-version">Checking latest version...</p> -->
@@ -221,21 +239,6 @@
                 </div>
                 <a id="detected-download" href="https://github.com/ghostselfbot/ghost/releases/download/latest/Ghost-Windows.zip" class="btn download-btn download-action fw-bold" download><i class="fa-solid fa-download" aria-hidden="true"></i><span>Download Ghost</span></a>
             </div>
-            <aside class="sponsor-card mb-4" aria-labelledby="sponsor-heading">
-                <div class="sponsor-content">
-                    <div class="sponsor-copy">
-                        <span class="sponsor-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
-                        <div>
-                            <h2 id="sponsor-heading">Support Ghost</h2>
-                            <p>Help keep Ghost free, open source, and actively developed.</p>
-                        </div>
-                    </div>
-                    <a href="https://github.com/sponsors/ghostselfbot" class="btn download-btn sponsor-action fw-bold" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <span>Sponsor on GitHub</span>
-                    </a>
-                </div>
-            </aside>
             <div class="os-selector mb-5" aria-label="Choose your operating system">
                 <button class="os-option" type="button" data-os="windows" aria-pressed="false"><i class="fa-brands fa-windows"></i> Windows</button>
                 <button class="os-option" type="button" data-os="mac" aria-pressed="false"><i class="fa-brands fa-apple"></i> macOS</button>
@@ -261,7 +264,7 @@
             </div>
 
             <div class="mb-4">
-                <h2>Useful Resources</h2>
+                <h3>Useful Resources</h3>
             </div>
             <aside class="trust-card" aria-labelledby="trust-heading">
                 <button class="trust-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trust-details" aria-expanded="false" aria-controls="trust-details">

@@ -12,46 +12,8 @@ function aboutReadMore() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var revealTargets = document.querySelectorAll(".hero-copy > *, #console-img-container, .features-heading, .feature-card, .surveillance-copy, #spypet-img-container, .surveillance-note, #setup > div, .sponsor-card, .gui-showcase-heading > *, .gui-showcase-layout");
-    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    revealTargets.forEach(function (target, index) {
-        target.classList.add("scroll-reveal");
-        target.style.setProperty("--reveal-delay", (index % 6) * 90 + "ms");
-    });
-
-    document.querySelectorAll("#spypet-img-container").forEach(function (target) {
-        target.classList.add("scroll-reveal--fade");
-    });
-
-    document.querySelectorAll(".sponsor-card").forEach(function (target) {
-        target.classList.add("scroll-reveal--fade");
-    });
-
-    document.querySelectorAll(".gui-showcase-heading > *, .gui-showcase-layout").forEach(function (target) {
-        target.classList.add("scroll-reveal--fade");
-    });
-
-    function revealTarget(target) {
-        target.classList.add("is-visible");
-    }
-
-    if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
-        revealTargets.forEach(revealTarget);
-    } else {
-        var revealObserver = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    revealTarget(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.14, rootMargin: "0px 0px -4%" });
-
-        revealTargets.forEach(function (target) {
-            revealObserver.observe(target);
-        });
-    }
+    // Scroll/fade reveal animations disabled — elements remain visible immediately.
+    // (Previously this block added .scroll-reveal and used IntersectionObserver.)
 
     var statsApi = "https://benny.fun/api/ghost/stats";
     var homeHeaderUsers = document.getElementById("home-header-users");
@@ -223,15 +185,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPanel.classList.remove("is-active");
                 currentPanel.setAttribute("aria-hidden", "true");
 
-                currentPanel.addEventListener("transitionend", function onTransitionEnd(event) {
-                    if (event.propertyName !== "opacity") {
-                        return;
-                    }
+                // If transitions are disabled (no transition duration), hide immediately.
+                try {
+                    var computed = window.getComputedStyle(currentPanel);
+                    if (!computed.transitionDuration || computed.transitionDuration === "0s") {
+                        currentPanel.hidden = true;
+                        currentPanel.classList.remove("is-exiting");
+                    } else {
+                        currentPanel.addEventListener("transitionend", function onTransitionEnd(event) {
+                            if (event.propertyName !== "opacity") {
+                                return;
+                            }
 
+                            currentPanel.hidden = true;
+                            currentPanel.classList.remove("is-exiting");
+                            currentPanel.removeEventListener("transitionend", onTransitionEnd);
+                        });
+                    }
+                } catch (e) {
                     currentPanel.hidden = true;
                     currentPanel.classList.remove("is-exiting");
-                    currentPanel.removeEventListener("transitionend", onTransitionEnd);
-                });
+                }
             }
 
             nextPanel.hidden = false;
@@ -260,9 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
         consoleImage.style.transform = "perspective(75em) rotateX(" + tilt + "deg)";
     }
 
-    window.addEventListener("scroll", updateConsoleTilt, { passive: true });
-    window.addEventListener("resize", updateConsoleTilt);
-    updateConsoleTilt();
+    // Console tilt on scroll/resize disabled to remove scroll-based animations.
 
     var surveillancePreview = document.getElementById("spypet-img-container");
     var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");

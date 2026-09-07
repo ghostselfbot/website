@@ -1591,7 +1591,7 @@ p, h1, h2, h3, h4, h5, h6, a, button, .btn, span {
         grid-template-columns: 1fr;
         min-height: 0;
         gap: 1.25rem;
-        padding: 1.3rem;
+        /* padding: 1.3rem; */
     }
 
     .stats-featured-divider + .stats-featured-value {

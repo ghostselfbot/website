@@ -53,6 +53,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    var statsApi = "https://benny.fun/api/ghost/stats";
+    var homeHeaderUsers = document.getElementById("home-header-users");
+
+    function loadHomepageStats() {
+        if (!homeHeaderUsers) {
+            return;
+        }
+
+        fetch(statsApi, { cache: "no-store" }).then(function (response) {
+            if (!response.ok) {
+                throw new Error("Stats request failed");
+            }
+            return response.json();
+        }).then(function (stats) {
+            var totalUsers = Number(stats.total_installs || 0);
+            homeHeaderUsers.textContent = totalUsers.toLocaleString("en-US") + " users";
+        }).catch(function () {
+            // Keep the snapshot values visible when the stats endpoint is unavailable or blocked by CORS.
+        });
+    }
+
+    loadHomepageStats();
+
     var platforms = {
         windows: {
             label: "Windows",

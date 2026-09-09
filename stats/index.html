@@ -351,13 +351,8 @@
                 const semverPattern = /^\d+.\d+.\d+(?:-dev)?$/;
                 
                 const versionRows = toRows(
-                Object.entries(data.version_breakdown || {})
-                .filter(([version]) => semverPattern.test(version))
-                );
-                
-                const versionRows = toRows(
                     Object.entries(data.version_breakdown || {})
-                        .filter(([version]) => semverPattern.test(version))
+                    .filter(([version]) => semverPattern.test(version))
                 );
                 
                 // const pythonRows = toRows(Object.entries(data.python_version_breakdown || {})).slice(0, 10);

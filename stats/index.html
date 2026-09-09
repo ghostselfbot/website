@@ -348,8 +348,12 @@
                     value
                 }));
                 
-                // Only show versions matching major.minor.patch, e.g. 4.2.3.
-                const semverPattern = /^\d+\.\d+\.\d+$/;
+                const semverPattern = /^\d+.\d+.\d+(?:-dev)?$/;
+                
+                const versionRows = toRows(
+                Object.entries(data.version_breakdown || {})
+                .filter(([version]) => semverPattern.test(version))
+                );
                 
                 const versionRows = toRows(
                     Object.entries(data.version_breakdown || {})

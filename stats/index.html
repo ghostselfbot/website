@@ -336,20 +336,42 @@
                 featuredInstallsWeek.textContent = niceNumber.format(Number(data.new_installs_week || 0));
                 featuredLatestVersion.textContent = formatValue(data.latest_version, 'latest_version');
                 headerUsers.textContent = `${niceNumber.format(totalInstalls)} users`;
-
-                const platformRows = toRows(Object.entries(data.platform_breakdown || {}))
-                    .map(({ label, value }) => ({ label: platformLabels[label] || label, value }));
-                const versionRows = toRows(Object.entries(data.version_breakdown || {}));
+                
+                // Only showcase known/supported platforms.
+                const allowedPlatforms = new Set(['android', 'darwin', 'linux', 'win32']);
+                
+                const platformRows = toRows(
+                    Object.entries(data.platform_breakdown || {})
+                        .filter(([platform]) => allowedPlatforms.has(platform))
+                ).map(({ label, value }) => ({
+                    label: platformLabels[label],
+                    value
+                }));
+                
+                // Only show versions matching major.minor.patch, e.g. 4.2.3.
+                const semverPattern = /^\d+\.\d+\.\d+$/;
+                
+                const versionRows = toRows(
+                    Object.entries(data.version_breakdown || {})
+                        .filter(([version]) => semverPattern.test(version))
+                );
+                
                 // const pythonRows = toRows(Object.entries(data.python_version_breakdown || {})).slice(0, 10);
                 // const pythonTotal = sumRows(pythonRows) || totalInstalls;
-
+                
                 platformTotalChip.textContent = `${niceNumber.format(totalInstalls)} installs`;
                 renderPlatformChart(document.getElementById('platform-breakdown'), platformRows);
-                renderBars(document.getElementById('version-breakdown'), versionRows, totalInstalls, (value) => niceNumber.format(value));
+                renderBars(
+                    document.getElementById('version-breakdown'),
+                    versionRows,
+                    totalInstalls,
+                    (value) => niceNumber.format(value)
+                );
                 // renderBars(document.getElementById('python-breakdown'), pythonRows, pythonTotal, (value) => niceNumber.format(value));
-
+                
                 statusText.textContent = statusMessage;
                 lastUpdated.textContent = lastUpdatedMessage;
+
             }
 
             async function loadStats() {
